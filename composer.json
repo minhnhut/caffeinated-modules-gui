@@ -1,0 +1,13 @@
+{
+    "name": "minhnhut/caffeinated-modules-gui",
+    "description": "GUI for caffeinated/modules package",
+    "license": "MIT",
+    "require": {
+        "php": ">=5.6.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "MinhNhut\\CaffeinatedModulesGui\\": "src/"
+        }
+    }
+}
