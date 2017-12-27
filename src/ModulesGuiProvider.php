@@ -13,7 +13,15 @@ class ModulesGuiProvider extends ServiceProvider
      */
     public function boot()
     {
-
+        if (!class_exists('Caffeinated\\Modules\\Modules')) {
+            throw new \Exception("CaffeinatedModulesGui: Caffeinated\\Modules is not installed. Please check and install this package in order to use CaffeinatedModulesGui package.");
+        }
+        $this->loadRoutesFrom(__DIR__ . '/routes/web.php');
+        $this->loadViewsFrom(__DIR__ . '/views', 'MinhNhut/CaffeinatedModulesGui', 'caffeintaed-modules-gui');
+        
+        $this->publishes([
+            __DIR__.'/views' => resource_path('views/vendor/caffeintaed-modules-gui'),
+        ]);
     }
 
     /**
@@ -23,10 +31,6 @@ class ModulesGuiProvider extends ServiceProvider
      */
     public function register()
     {
-        if (!class_exists('Caffeinated\\Modules\\Modules')) {
-            throw new \Exception("CaffeinatedModulesGui: Caffeinated\\Modules is not installed. Please check and install this package in order to use CaffeinatedModulesGui package.");
-        }
-        $this->loadRoutesFrom(__DIR__ . '/routes/web.php');
-        $this->loadViewsFrom(__DIR__ . '/views', 'MinhNhut/CaffeinatedModulesGui');
+        
     }
 }

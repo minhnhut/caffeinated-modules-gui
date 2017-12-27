@@ -37,7 +37,7 @@ class ModulesGuiController extends Controller
         }
 
         return view(
-            "MinhNhut/CaffeinatedModulesGui::modules.{$this->theme}.list",
+            "caffeintaed-modules-gui::modules.{$this->theme}.list",
             [
                 'modules' => $results
             ]
