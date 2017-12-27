@@ -17,7 +17,7 @@ class ModulesGuiProvider extends ServiceProvider
             throw new \Exception("CaffeinatedModulesGui: Caffeinated\\Modules is not installed. Please check and install this package in order to use CaffeinatedModulesGui package.");
         }
         $this->loadRoutesFrom(__DIR__ . '/routes/web.php');
-        $this->loadViewsFrom(__DIR__ . '/views', 'MinhNhut/CaffeinatedModulesGui', 'caffeintaed-modules-gui');
+        $this->loadViewsFrom(__DIR__ . '/views', 'caffeintaed-modules-gui');
         
         $this->publishes([
             __DIR__.'/views' => resource_path('views/vendor/caffeintaed-modules-gui'),
