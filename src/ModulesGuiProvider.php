@@ -13,7 +13,7 @@ class ModulesGuiProvider extends ServiceProvider
      */
     public function boot()
     {
-        if (!class_exists('Caffeinated\\Modules\\Modules')) {
+        if (!class_exists('Caffeinated\\Modules\\ModulesServiceProvider')) {
             throw new \Exception("CaffeinatedModulesGui: Caffeinated\\Modules is not installed. Please check and install this package in order to use CaffeinatedModulesGui package.");
         }
         $this->loadRoutesFrom(__DIR__ . '/routes/web.php');
